@@ -1,0 +1,72 @@
+@import "~font-awesome/css/font-awesome.min.css";
+@import "~photoswipe/dist/photoswipe.css";
+@import "~photoswipe/dist/default-skin/default-skin.css";
+@import "~bootstrap/less/mixins.less";
+@import "~bootstrap/less/variables.less";
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+Config
+
+*/
+
+@grid-columns: 24;
+@grid-gutter-width: 30px;
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+Global Styles
+
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+Grid
+
+*/
+
+.gallery-grid {
+    .clearfix();
+    .controls {
+        &.top {}
+        &.bottom {}
+        > a {
+            > span {
+                .text-hide();
+            }
+        }
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        .clearfix();
+        .make-row();
+        > li {
+            padding-top: @grid-gutter-width/2;
+            padding-bottom: @grid-gutter-width/2;
+            .make-xs-column(24);
+            .make-sm-column(8);
+            .make-lg-column(6);
+            > a {
+                display: block;
+                > img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+PhotoSwipe Custom
+
+*/
+
+

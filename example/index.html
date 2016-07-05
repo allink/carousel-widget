@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Softpage example</title>
+        <link rel="stylesheet" href="/example.css" media="screen" charset="utf-8">
+    </head>
+    <body>
+
+        <div class="gallery-grid" id="example-gallery">
+
+            <header>
+                <h2>Gallery Heading</h2>
+            </header>
+
+            <div class="controls top">
+                <a href="#" class="prev">
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span>Previous page</span>
+                </a>
+                <span class="page-number"></span>
+                <a href="#" class="next">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    <span>Next page</span>
+                </a>
+            </div>
+
+            <div class="gallery-list-container">
+                <ul>
+                    <li>
+                        <a href="http://placehold.it/800x500/9cd3a9/ffffff" data-size="800x500">
+                            <img src="http://placehold.it/350x350/9cd3a9/ffffff">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://placehold.it/800x500/b0a1c4/ffffff" data-size="800x500">
+                            <img src="http://placehold.it/350x350/b0a1c4/ffffff">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://placehold.it/800x500/d3af8b/ffffff" data-size="800x500">
+                            <img src="http://placehold.it/350x350/d3af8b/ffffff">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://placehold.it/800x500/8cb7ae/ffffff" data-size="800x500">
+                            <img src="http://placehold.it/350x350/8cb7ae/ffffff">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://placehold.it/800x500/b0a1bb/ffffff" data-size="800x500">
+                            <img src="http://placehold.it/350x350/b0a1bb/ffffff">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://placehold.it/800x500/d7aebb/ffffff" data-size="800x500">
+                            <img src="http://placehold.it/350x350/d7aebb/ffffff">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://placehold.it/800x500/aca5bb/ffffff" data-size="800x500">
+                            <img src="http://placehold.it/350x350/aca5bb/ffffff">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://placehold.it/800x500/b5af9f/ffffff" data-size="800x500">
+                            <img src="http://placehold.it/350x350/b5af9f/ffffff">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="controls bottom">
+                <a href="#" class="prev">
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span>Previous page</span>
+                </a>
+                <span class="page-number"></span>
+                <a href="#" class="next">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    <span>Next page</span>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Root element of PhotoSwipe. Must have class pswp. -->
+        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+            <!-- Background of PhotoSwipe.
+                 It's a separate element as animating opacity is faster than rgba(). -->
+            <div class="pswp__bg"></div>
+
+            <!-- Slides wrapper with overflow:hidden. -->
+            <div class="pswp__scroll-wrap">
+
+                <!-- Container that holds slides.
+                    PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                    Don't modify these 3 pswp__item elements, data is added later on. -->
+                <div class="pswp__container">
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                </div>
+
+                <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+                <div class="pswp__ui pswp__ui--hidden">
+
+                    <div class="pswp__top-bar">
+
+                        <!--  Controls are self-explanatory. Order can be changed. -->
+
+                        <div class="pswp__counter"></div>
+
+                        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                        <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                        <!-- element will get class pswp__preloader--active when preloader is running -->
+                        <div class="pswp__preloader">
+                            <div class="pswp__preloader__icn">
+                              <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                        <div class="pswp__share-tooltip"></div>
+                    </div>
+
+                    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                    </button>
+
+                    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                    </button>
+
+                    <div class="pswp__caption">
+                        <div class="pswp__caption__center"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <script type="text/javascript" src="/example.js"></script>
+    </body>
+</html>

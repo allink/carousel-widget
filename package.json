@@ -1,0 +1,38 @@
+{
+  "name": "webpack-intro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "build": "./node_modules/webpack/bin/webpack.js",
+    "dev": "./node_modules/webpack/bin/webpack.js -w",
+    "dev-server": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --content-base example/"
+  },
+  "author": "Vladimir Kuzma",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^6.3.7",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.9.0",
+    "bootstrap": "^3.3.6",
+    "clean-webpack-plugin": "^0.1.9",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "font-awesome": "^4.6.3",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "postcss-loader": "^0.9.1",
+    "progress-bar-webpack-plugin": "^1.8.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-merge": "^0.14.0",
+    "webpack-validator": "^2.2.0"
+  },
+  "dependencies": {
+    "photoswipe": "^4.1.1"
+  }
+}
