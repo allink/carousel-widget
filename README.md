@@ -1,13 +1,8 @@
-#Webpack Seed
-Simple Webpack config for building libraries and widgets.
+#Carousel Widget
+TBD
 
-##Commands
-For development:
+##Sub
+Intro
 ```
-npm run dev
-```
-
-For production:
-```
-npm run build
-```
+some code
+k
