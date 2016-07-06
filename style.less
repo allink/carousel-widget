@@ -3,6 +3,7 @@
 @import "~photoswipe/dist/default-skin/default-skin.css";
 @import "~bootstrap/less/mixins.less";
 @import "~bootstrap/less/variables.less";
+@import "~bootstrap/less/responsive-utilities.less";
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
@@ -12,6 +13,9 @@ Config
 
 @grid-columns: 24;
 @grid-gutter-width: 30px;
+
+@color1: #444;
+@color2: #aaa;
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -24,6 +28,11 @@ Global Styles
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Roboto', sans-serif;
+    color: @color1;
+}
+
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
@@ -32,25 +41,58 @@ Grid
 */
 
 .gallery-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: @grid-gutter-width*2 0;
     .clearfix();
-    .controls {
-        &.top {}
-        &.bottom {}
-        > a {
-            > span {
-                .text-hide();
-            }
+    .header-container {
+        .clearfix();
+        > header {
+            float: left;
         }
+    }
+    .heading {
+        margin: 0;
+        line-height: 40px;
+        text-transform: uppercase;
+        color: @color2;
+        font-weight: 400;
+    }
+    .controls {
+        > * {
+            display: inline-block;
+            line-height: 40px;
+            height: 40px;
+        }
+        &.top {
+            float: right;
+            .hidden-xs();
+        }
+        &.bottom {
+            text-align: center;
+            .visible-xs-block();
+        }
+        > a {
+            width: 40px;
+            text-align: center;
+            color: @color2;
+        }
+        .page-number {
+            margin: 0 0.5em;
+        }
+    }
+    .gallery-list-container {
     }
     ul {
         list-style: none;
         padding: 0;
+        margin: 0;
         .clearfix();
         .make-row();
         > li {
             padding-top: @grid-gutter-width/2;
             padding-bottom: @grid-gutter-width/2;
-            .make-xs-column(24);
+            .make-xs-column(12);
             .make-sm-column(8);
             .make-lg-column(6);
             > a {
@@ -69,4 +111,14 @@ PhotoSwipe Custom
 
 */
 
+.pswp__bg {
+    background: rgba(0,0,0,0.8);
+}
 
+.pswp__button:before {
+    background-color: transparent;
+}
+
+.pswp__top-bar, .pswp__caption {
+    background-color: transparent;
+}

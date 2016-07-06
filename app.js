@@ -5,11 +5,13 @@ class GalleryGrid {
     constructor(gallery_grid, options) {
         this.options = options || {};
         this.gallery_grid = gallery_grid;
+        this.gallery_list_container = this.gallery_grid.querySelector('.gallery-list-container');
+        this.gallery_items = [...this.gallery_list_container.children];
         this.controls = [...this.gallery_grid.querySelectorAll('.controls')];
         this.prev_btns = [...this.gallery_grid.querySelectorAll('.controls .prev')];
         this.next_btns = [...this.gallery_grid.querySelectorAll('.controls .next')];
-        this.pages = [...this.gallery_grid.querySelectorAll('.gallery-list-container > ul')];
-        this.current_page = this.pages[0];
+        this.pages = null;
+        this.current_page = null;
         this.page_numbers = this.gallery_grid.querySelectorAll('.page-number');
         this.index = 0;
         this.index_before = -1;
@@ -19,6 +21,11 @@ class GalleryGrid {
     }
 
     init() {
+        // first of all, grab all gallery items and divide into list..
+        this.pages = this.divideListIntoPages();
+        // ..then define the current page
+        this.current_page = this.pages[0];
+
         (this.prev_btns).map((value) => {
             value.addEventListener('click', (event) => {
                 event.preventDefault();
@@ -33,10 +40,9 @@ class GalleryGrid {
             });
         });
 
-        this.updatedPages(0);
+       this.updatedPages(0);
 
         // create separate lists according to setting
-        this.divideListIntoPages();
 
         (this.controls).map((value) => {
             value.style.display = 'block';
@@ -55,7 +61,38 @@ class GalleryGrid {
     }
 
     divideListIntoPages() {
-        this.options.items_per_page;
+        var counter = 0,
+            pages = [];
+
+        // create first list
+        let ul = document.createElement('ul');
+
+        // loop through gallery items
+        (this.gallery_items).map((value, index) => {
+            // init
+            counter++;
+            // create list item and append to list
+            let li = document.createElement('li');
+            li.appendChild(value);
+            ul.appendChild(li);
+
+            // finally append list to container
+            if(counter == this.options.items_per_page) {
+                counter = 0;
+                this.gallery_list_container.appendChild(ul);
+                // add list to pages array..
+                pages.push(ul);
+                // ..and create new list we can append childs to
+                ul = document.createElement('ul');
+            }
+            // last element
+            else if(index == this.gallery_items.length - 1) {
+                this.gallery_list_container.appendChild(ul);
+                pages.push(ul);
+            }
+        });
+
+        return pages;
     }
 
     updatedPages(offset) {

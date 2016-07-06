@@ -3,82 +3,74 @@
     <head>
         <meta charset="utf-8">
         <title>Softpage example</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" href="/example.css" media="screen" charset="utf-8">
     </head>
     <body>
 
         <div class="gallery-grid" id="example-gallery">
 
-            <header>
-                <h2>Gallery Heading</h2>
-            </header>
+            <div class="header-container">
+                <header>
+                    <h2 class="heading">Dynamic.Responsive.Gallery</h2>
+                </header>
 
-            <div class="controls top">
-                <a href="#" class="prev">
-                    <i class="fa fa-angle-left" aria-hidden="true"></i>
-                    <span>Previous page</span>
-                </a>
-                <span class="page-number"></span>
-                <a href="#" class="next">
-                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                    <span>Next page</span>
-                </a>
+                <div class="controls top">
+                    <a href="#" class="prev">
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="sr-only">Previous page</span>
+                    </a>
+                    <span class="page-number"></span>
+                    <a href="#" class="next">
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        <span class="sr-only">Next page</span>
+                    </a>
+                </div>
             </div>
 
             <div class="gallery-list-container">
-                <ul>
-                    <li>
-                        <a href="http://placehold.it/800x500/9cd3a9/ffffff" data-size="800x500">
-                            <img src="http://placehold.it/350x350/9cd3a9/ffffff">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://placehold.it/800x500/b0a1c4/ffffff" data-size="800x500">
-                            <img src="http://placehold.it/350x350/b0a1c4/ffffff">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://placehold.it/800x500/d3af8b/ffffff" data-size="800x500">
-                            <img src="http://placehold.it/350x350/d3af8b/ffffff">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://placehold.it/800x500/8cb7ae/ffffff" data-size="800x500">
-                            <img src="http://placehold.it/350x350/8cb7ae/ffffff">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://placehold.it/800x500/b0a1bb/ffffff" data-size="800x500">
-                            <img src="http://placehold.it/350x350/b0a1bb/ffffff">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://placehold.it/800x500/d7aebb/ffffff" data-size="800x500">
-                            <img src="http://placehold.it/350x350/d7aebb/ffffff">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://placehold.it/800x500/aca5bb/ffffff" data-size="800x500">
-                            <img src="http://placehold.it/350x350/aca5bb/ffffff">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://placehold.it/800x500/b5af9f/ffffff" data-size="800x500">
-                            <img src="http://placehold.it/350x350/b5af9f/ffffff">
-                        </a>
-                    </li>
-                </ul>
+                <a href="http://placehold.it/800x500/9cd3a9/ffffff" data-size="800x500">
+                    <img src="http://placehold.it/350x350/9cd3a9/ffffff">
+                </a>
+
+                <a href="http://placehold.it/800x500/b0a1c4/ffffff" data-size="800x500">
+                    <img src="http://placehold.it/350x350/b0a1c4/ffffff">
+                </a>
+
+                <a href="http://placehold.it/800x500/d3af8b/ffffff" data-size="800x500">
+                    <img src="http://placehold.it/350x350/d3af8b/ffffff">
+                </a>
+
+                <a href="http://placehold.it/800x500/8cb7ae/ffffff" data-size="800x500">
+                    <img src="http://placehold.it/350x350/8cb7ae/ffffff">
+                </a>
+
+                <a href="http://placehold.it/800x500/dddcaf/ffffff" data-size="800x500">
+                    <img src="http://placehold.it/350x350/dddcaf/ffffff">
+                </a>
+
+                <a href="http://placehold.it/800x500/d7aebb/ffffff" data-size="800x500">
+                    <img src="http://placehold.it/350x350/d7aebb/ffffff">
+                </a>
+
+                <a href="http://placehold.it/800x500/a9bbcb/ffffff" data-size="800x500">
+                    <img src="http://placehold.it/350x350/a9bbcb/ffffff">
+                </a>
+
+                <a href="http://placehold.it/800x500/b5af9f/ffffff" data-size="800x500">
+                    <img src="http://placehold.it/350x350/b5af9f/ffffff">
+                </a>
             </div>
 
             <div class="controls bottom">
                 <a href="#" class="prev">
                     <i class="fa fa-angle-left" aria-hidden="true"></i>
-                    <span>Previous page</span>
+                    <span class="sr-only">Previous page</span>
                 </a>
                 <span class="page-number"></span>
                 <a href="#" class="next">
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
-                    <span>Next page</span>
+                    <span class="sr-only">Next page</span>
                 </a>
             </div>
 
