@@ -75,6 +75,8 @@ switch(process.env.npm_lifecycle_event) {
             filename: '[name].js'
         },
         externals: [
+            'photoswipe',
+            'photoswipe/dist/photoswipe-ui-default'
         ]
     });
     break;

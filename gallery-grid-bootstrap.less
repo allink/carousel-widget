@@ -1,37 +1,5 @@
-@import "~font-awesome/css/font-awesome.min.css";
 @import "~photoswipe/dist/photoswipe.css";
 @import "~photoswipe/dist/default-skin/default-skin.css";
-@import "~bootstrap/less/mixins.less";
-@import "~bootstrap/less/variables.less";
-@import "~bootstrap/less/responsive-utilities.less";
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-
-Config
-
-*/
-
-@grid-columns: 24;
-@grid-gutter-width: 30px;
-
-@color1: #444;
-@color2: #aaa;
-
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-
-Global Styles
-
-*/
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    color: @color1;
-}
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -41,7 +9,6 @@ Grid
 */
 
 .gallery-grid {
-    max-width: 1200px;
     margin: 0 auto;
     padding: @grid-gutter-width*2 @grid-gutter-width/2;
     .clearfix();
@@ -55,7 +22,6 @@ Grid
         margin: 0;
         line-height: 40px;
         text-transform: uppercase;
-        color: @color2;
         font-weight: 400;
     }
     .controls {
@@ -75,7 +41,6 @@ Grid
         > a {
             width: 40px;
             text-align: center;
-            color: @color2;
         }
         .page-number {
             margin: 0 0.5em;

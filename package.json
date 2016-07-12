@@ -1,8 +1,8 @@
 {
-  "name": "webpack-intro",
+  "name": "gallery-grid",
   "version": "0.1.0",
   "description": "",
-  "main": "app.js",
+  "main": "dist/gallery_grid.js",
   "scripts": {
     "build": "./node_modules/webpack/bin/webpack.js",
     "dev": "./node_modules/webpack/bin/webpack.js -w",

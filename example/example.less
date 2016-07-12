@@ -1,0 +1,53 @@
+@import "~font-awesome/css/font-awesome.min.css";
+@import "~bootstrap/less/mixins.less";
+@import "~bootstrap/less/variables.less";
+@import "~bootstrap/less/responsive-utilities.less";
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+Config
+
+*/
+
+@grid-columns: 24;
+@grid-gutter-width: 30px;
+
+@color1: #444;
+@color2: #aaa;
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+Global Styles
+
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: @color1;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+Grid
+
+*/
+
+.gallery-grid {
+    max-width: 1200px;
+    .heading {
+        color: @color2;
+    }
+    .controls {
+        > a {
+            color: @color2;
+        }
+    }
+}
+
+
+@import "../gallery-grid-bootstrap.less";
