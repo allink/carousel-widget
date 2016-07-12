@@ -1,14 +1,23 @@
 import PhotoSwipe from 'photoswipe';
 import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default';
 
+const node_list_to_array = function (node_list) {
+    let array_list = [];
+    for(let i  = 0; i < node_list.length; i++) {
+        array_list.push(node_list[i]);
+    }
+
+    return array_list;
+}
+
 class GalleryGrid {
     constructor(gallery_grid, options) {
         this.options = options || {};
         this.gallery_grid = gallery_grid;
-        this.controls = [...this.gallery_grid.querySelectorAll('.controls')];
-        this.prev_btns = [...this.gallery_grid.querySelectorAll('.controls .prev')];
-        this.next_btns = [...this.gallery_grid.querySelectorAll('.controls .next')];
-        this.pages = [...this.gallery_grid.querySelectorAll('.gallery-list-container > ul')];
+        this.controls = node_list_to_array(this.gallery_grid.querySelectorAll('.controls'));
+        this.prev_btns = node_list_to_array(this.gallery_grid.querySelectorAll('.controls .prev'));
+        this.next_btns = node_list_to_array(this.gallery_grid.querySelectorAll('.controls .next'));
+        this.pages = node_list_to_array(this.gallery_grid.querySelectorAll('.gallery-list-container > ul'));
         this.current_page = this.pages[0];
         this.page_numbers = this.gallery_grid.querySelectorAll('.page-number');
         this.index = 0;
@@ -42,14 +51,14 @@ class GalleryGrid {
             value.style.display = 'block';
         });
 
-        var me = this;
+        var _this = this;
 
         new PhotoSwipeGallery({
             element: this.gallery_grid,
             disable_show_animation: this.options.disable_show_animation,
             item_selector: '.gallery-list-container a',
             after_change: (gallery) => {
-                this.goToPage(Math.floor((gallery.getCurrentIndex() / me.items_per_page)));
+                this.goToPage(Math.floor((gallery.getCurrentIndex() / _this.items_per_page)));
             }
         });
     }
@@ -78,7 +87,7 @@ class GalleryGrid {
 
             this.current_page.style.display = 'block';
 
-            ([...this.page_numbers]).map((value) => {
+            (node_list_to_array(this.page_numbers)).map((value) => {
                 value.innerHTML = (index + 1) + ' / ' + this.pages.length;
             });
 
@@ -97,7 +106,7 @@ class PhotoSwipeGallery {
     }
 
     init() {
-        this.child_nodes = [...this.element.querySelectorAll(this.item_selector)];
+        this.child_nodes = node_list_to_array(this.element.querySelectorAll(this.item_selector));
 
         this.child_nodes.map((value) => {
             value.addEventListener('click', (event) => {

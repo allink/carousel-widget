@@ -10,7 +10,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
 const PATHS = {
-    app: './app',
+    app: './gallery_grid',
     example: './example/example',
     build: './dist'
 };
@@ -20,7 +20,7 @@ const common = {
         filename: '[name].js',
     	path: path.resolve(PATHS.build),
         libraryTarget: 'umd',
-        library: 'LibraryName'
+        library: 'GalleryGrid'
     },
     module: {
         loaders: [{
@@ -69,7 +69,7 @@ switch(process.env.npm_lifecycle_event) {
     case 'build':
         config = merge(common, {
         entry: {
-            app: PATHS.app,
+            gallery_grid: PATHS.app,
         },
         output: {
             filename: '[name].js'
